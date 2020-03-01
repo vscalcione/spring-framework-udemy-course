@@ -6,9 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ComponentScan("demo.springframework.dependencyinjection")
+//@ComponentScan("demo.springframework.dependencyinjection")
+@ImportResource("classpath:/spring/spring-configuration.xml")
 public class DependencyinjectionApplication {
 
     public static void main(String[] args) {
