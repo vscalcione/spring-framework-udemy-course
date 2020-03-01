@@ -1,5 +1,7 @@
 package demo.springframework.dependencyinjection.services;
 
+import demo.springframework.dependencyinjection.services.implementations.*;
+
 public class HelloWorldFactory {
 
     public HelloWorldService createHelloWorldService(String language){
@@ -16,13 +18,13 @@ public class HelloWorldFactory {
                 service = new HelloWorldServiceFrenchImpl();
                 break;
             case "de":
-                service = new HelloWorldServiceGerman();
+                service = new HelloWorldServiceGermanImpl();
                 break;
             case "pl":
-                service = new HelloWorldServicePolish();
+                service = new HelloWorldServicePolishImpl();
                 break;
             case "ru":
-                service = new HelloWorldServiceRussian();
+                service = new HelloWorldServiceRussianImpl();
                 break;
             default: new HelloWorldServiceEnglishImpl();
         }
