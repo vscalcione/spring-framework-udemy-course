@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Creating bean hello  world factory -->
+    <bean id="helloWorldFactory" class="demo.springframework.dependencyinjection.services.HelloWorldFactory" />
+
+    <!-- Creating bean french -->
+    <bean id="french" factory-bean="helloWorldFactory" factory-method="createHelloWorldService">
+        <constructor-arg value="fr"></constructor-arg>
+    </bean>
+
+    <!-- Creating bean german -->
+    <bean id="helloWorldServiceGerman" factory-bean="helloWorldFactory" factory-method="createHelloWorldService">
+        <constructor-arg value="de"></constructor-arg>
+    </bean>
+
+    <!-- Creating bean polish -->
+    <bean id="polish" factory-bean="helloWorldFactory" factory-method="createHelloWorldService">
+        <constructor-arg value="pl"></constructor-arg>
+    </bean>
+
+    <!-- Creating bean russian -->
+    <bean id="russian" factory-bean="helloWorldFactory" factory-method="createHelloWorldService">
+        <constructor-arg value="ru"></constructor-arg>
+    </bean>
+
+    <!-- Creating bean english -->
+    <beans profile="english">
+        <import resource="classpath:spring/english-helloworld-configuration.xml" />
+    </beans>
+
+    <!-- Creating bean spanish -->
+    <beans profile="spanish">
+        <import resource="classpath:spring/spanish-helloworld-configuration.xml" />
+    </beans>
+</beans>
