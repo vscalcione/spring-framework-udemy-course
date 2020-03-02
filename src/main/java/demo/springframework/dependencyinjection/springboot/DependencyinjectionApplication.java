@@ -1,6 +1,5 @@
 package demo.springframework.dependencyinjection.springboot;
 
-
 import demo.springframework.dependencyinjection.controllers.GreetingController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

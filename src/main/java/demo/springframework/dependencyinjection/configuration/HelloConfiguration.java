@@ -10,42 +10,44 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class HelloConfiguration {
 
-    @Bean
-    public HelloWorldFactory helloWorldFactory(){
-        return new HelloWorldFactory();
-    }
+    // se vuoi usare la configurazione tramite xml, commentare il contenuto della classe
 
-    @Bean
-    @Primary
-    @Profile("english")
-    public HelloWorldServiceEnglishImpl helloWorldServiceEnglish(HelloWorldFactory factory){
-        return (HelloWorldServiceEnglishImpl) factory.createHelloWorldService("en");
-    }
-
-    @Bean
-    @Primary
-    @Profile("spanish")
-    public HelloWorldServiceSpanishImpl helloWorldServiceSpanish(HelloWorldFactory factory){
-        return (HelloWorldServiceSpanishImpl) factory.createHelloWorldService("sp");
-    }
-
-    @Bean(name = "french")
-    public HelloWorldServiceFrenchImpl helloWorldServiceFrench (HelloWorldFactory factory){
-        return (HelloWorldServiceFrenchImpl) factory.createHelloWorldService("fr");
-    }
-
-    @Bean
-    public HelloWorldServiceGermanImpl helloWorldServiceGerman(HelloWorldFactory factory){
-        return (HelloWorldServiceGermanImpl) factory.createHelloWorldService("de");
-    }
-
-    @Bean
-    public HelloWorldServicePolishImpl helloWorldServicePolish (HelloWorldFactory factory){
-        return (HelloWorldServicePolishImpl) factory.createHelloWorldService("pl");
-    }
-
-    @Bean
-    public HelloWorldServiceRussianImpl helloWorldServiceRussian (HelloWorldFactory factory){
-        return (HelloWorldServiceRussianImpl) factory.createHelloWorldService("ru");
-    }
+//    @Bean
+//    public HelloWorldFactory helloWorldFactory(){
+//        return new HelloWorldFactory();
+//    }
+//
+//    @Bean
+//    @Primary
+//    @Profile("english")
+//    public HelloWorldServiceEnglishImpl helloWorldServiceEnglish(HelloWorldFactory factory){
+//        return (HelloWorldServiceEnglishImpl) factory.createHelloWorldService("en");
+//    }
+//
+//    @Bean
+//    @Primary
+//    @Profile("spanish")
+//    public HelloWorldServiceSpanishImpl helloWorldServiceSpanish(HelloWorldFactory factory){
+//        return (HelloWorldServiceSpanishImpl) factory.createHelloWorldService("sp");
+//    }
+//
+//    @Bean(name = "french")
+//    public HelloWorldServiceFrenchImpl helloWorldServiceFrench (HelloWorldFactory factory){
+//        return (HelloWorldServiceFrenchImpl) factory.createHelloWorldService("fr");
+//    }
+//
+//    @Bean
+//    public HelloWorldServiceGermanImpl helloWorldServiceGerman(HelloWorldFactory factory){
+//        return (HelloWorldServiceGermanImpl) factory.createHelloWorldService("de");
+//    }
+//
+//    @Bean
+//    public HelloWorldServicePolishImpl helloWorldServicePolish (HelloWorldFactory factory){
+//        return (HelloWorldServicePolishImpl) factory.createHelloWorldService("pl");
+//    }
+//
+//    @Bean
+//    public HelloWorldServiceRussianImpl helloWorldServiceRussian (HelloWorldFactory factory){
+//        return (HelloWorldServiceRussianImpl) factory.createHelloWorldService("ru");
+//    }
 }
